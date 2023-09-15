@@ -37,7 +37,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 
 //CONTROLLER YAPILARI ALTTAAKÝ KOD ÝLE KEÞFEDÝLÝYOR
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.ConfigureSwagger();
 //serviceExtensions dan sonra eklendi servisi kalýtýmla alamayacaðýmýz için static sýnýf açtýk ve buraya sýnýfýmýzý verdik
 //kayýtlar
 builder.Services.ConfigureSqlContext(builder.Configuration);
@@ -68,10 +68,15 @@ var logger = app.Services.GetService<ILoggerService>();
 app.ConfigureExceptionHandler(logger);
 
 // Configure the HTTP request pipeline.
+//belgelendirme swagger yapýlandýrma
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(s =>
+    {
+        s.SwaggerEndpoint("/swagger/v1/swagger.json", "bsStoreApp v1");
+        s.SwaggerEndpoint("/swagger/v2/swagger.json", "bsStoreApp v2");
+    });
 }
 
 if (app.Environment.IsProduction())
