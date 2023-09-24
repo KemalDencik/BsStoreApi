@@ -11,6 +11,7 @@ namespace Repositories.Contracts
     {
         IBookRepository Book { get; }
         //kayıt işlemi
+        ICategoryRepository Category { get; }
         Task SaveAsync();
 
     }
