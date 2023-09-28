@@ -1,4 +1,5 @@
-﻿using Entities.Models;
+﻿using Entities.Exceptions;
+using Entities.Models;
 using Repositories.Contracts;
 using Services.Contracts;
 using System;
@@ -27,9 +28,13 @@ namespace Services
 
         public async Task<Category> GetOneCategoryByIdAsnyc(int id, bool trackChanges)
         {
-           return await _manager
+           var category = await _manager
                 .Category
                 .GetOneCategoryByIdAsync(id, trackChanges);
+
+            if (category is null)
+                throw new CategoryNotFoundException(id);
+            return category;
         }
     }
 }

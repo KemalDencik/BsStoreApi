@@ -12,8 +12,8 @@ using Repositories.EFCore;
 namespace WepApi.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230816134207_init")]
-    partial class init
+    [Migration("20230928112019_all")]
+    partial class all
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,6 +32,9 @@ namespace WepApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -41,26 +44,65 @@ namespace WepApi.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Books");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
+                            CategoryId = 1,
                             Price = 25m,
                             Title = "Suç ve Ceza"
                         },
                         new
                         {
                             Id = 2,
+                            CategoryId = 2,
                             Price = 35m,
                             Title = "II. Dünya Savaşı"
                         },
                         new
                         {
                             Id = 3,
+                            CategoryId = 3,
                             Price = 45m,
                             Title = "Sarıkamış"
+                        });
+                });
+
+            modelBuilder.Entity("Entities.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"), 1L, 1);
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            CategoryName = "Computer Science"
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            CategoryName = "Sql Science"
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            CategoryName = "API Science"
                         });
                 });
 
@@ -111,6 +153,12 @@ namespace WepApi.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("RefreshToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RefreshTokenExpiryTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -164,22 +212,22 @@ namespace WepApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9c18518a-44a8-486a-ae1d-d8f2be895b29",
-                            ConcurrencyStamp = "6dde73d6-23ac-48b8-913d-6c3f519111dd",
+                            Id = "dd7be7f3-92f3-46aa-8cb3-feb392463aef",
+                            ConcurrencyStamp = "38fbac45-c4f5-4db8-8cf0-e70e0c33dfe3",
                             Name = "user",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "c5099db5-5dff-41ce-a84f-ae80053d2223",
-                            ConcurrencyStamp = "2218d915-dbea-461d-ba0d-c28163a5b6ac",
+                            Id = "0fb8a714-a809-448f-a64a-2490c4b6cf7a",
+                            ConcurrencyStamp = "e85e93b4-e8cd-4a87-b193-b909db0fe579",
                             Name = "editor",
                             NormalizedName = "EDITOR"
                         },
                         new
                         {
-                            Id = "c21afa0e-9643-4504-94d0-ddce2f16de59",
-                            ConcurrencyStamp = "2a09609c-a131-44fa-841a-87c75f3231f5",
+                            Id = "3d6f46b3-5b87-45db-835b-811cc834a52e",
+                            ConcurrencyStamp = "ad8a5c22-069d-44e0-9ca1-581c5dc41d52",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -291,6 +339,17 @@ namespace WepApi.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Entities.Models.Book", b =>
+                {
+                    b.HasOne("Entities.Models.Category", "Category")
+                        .WithMany("Books")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -340,6 +399,11 @@ namespace WepApi.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Entities.Models.Category", b =>
+                {
+                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }

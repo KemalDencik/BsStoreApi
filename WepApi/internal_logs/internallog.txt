@@ -457,3 +457,109 @@
 2023-09-24 23:39:32.7114 Info Message Template Auto Format enabled
 2023-09-24 23:39:32.8185 Info Adding target FileTarget(Name=logfile)
 2023-09-24 23:39:32.8486 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 13:49:20.9791 Info Message Template Auto Format enabled
+2023-09-28 13:49:21.0982 Info Adding target FileTarget(Name=logfile)
+2023-09-28 13:49:21.1308 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 13:57:58.0513 Info Message Template Auto Format enabled
+2023-09-28 13:57:58.1506 Info Adding target FileTarget(Name=logfile)
+2023-09-28 13:57:58.1763 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:04:44.1435 Info Message Template Auto Format enabled
+2023-09-28 14:04:44.1857 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:04:44.2019 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:04:45.2611 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:04:45.2611 Info LogFactory has been closed.
+2023-09-28 14:05:21.9217 Info Message Template Auto Format enabled
+2023-09-28 14:05:21.9596 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:05:21.9753 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:05:23.1193 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:05:23.1193 Info LogFactory has been closed.
+2023-09-28 14:06:28.8315 Info Message Template Auto Format enabled
+2023-09-28 14:06:28.8708 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:06:28.8870 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:06:30.1036 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:06:30.1036 Info LogFactory has been closed.
+2023-09-28 14:06:43.7230 Info Message Template Auto Format enabled
+2023-09-28 14:06:43.7621 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:06:43.7784 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:06:44.8157 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:06:44.8243 Info LogFactory has been closed.
+2023-09-28 14:06:50.8376 Info Message Template Auto Format enabled
+2023-09-28 14:06:50.8754 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:06:50.8919 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:06:51.9733 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:06:51.9813 Info LogFactory has been closed.
+2023-09-28 14:08:12.1406 Info Message Template Auto Format enabled
+2023-09-28 14:08:12.1823 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:08:12.1994 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:08:13.4537 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:08:13.4621 Info LogFactory has been closed.
+2023-09-28 14:08:32.6155 Info Message Template Auto Format enabled
+2023-09-28 14:08:32.6537 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:08:32.6693 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:08:33.7345 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:08:33.7427 Info LogFactory has been closed.
+2023-09-28 14:08:55.5394 Info Message Template Auto Format enabled
+2023-09-28 14:08:55.5838 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:08:55.6056 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:08:56.6817 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:08:56.6817 Info LogFactory has been closed.
+2023-09-28 14:13:27.2005 Info Message Template Auto Format enabled
+2023-09-28 14:13:27.2401 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:13:27.2564 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:13:28.4647 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:13:28.4647 Info LogFactory has been closed.
+2023-09-28 14:13:43.4997 Info Message Template Auto Format enabled
+2023-09-28 14:13:43.5409 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:13:43.5565 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:13:44.6096 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:13:44.6181 Info LogFactory has been closed.
+2023-09-28 14:13:51.5195 Info Message Template Auto Format enabled
+2023-09-28 14:13:51.5667 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:13:51.5860 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:13:52.6534 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:13:52.6534 Info LogFactory has been closed.
+2023-09-28 14:14:04.7351 Info Message Template Auto Format enabled
+2023-09-28 14:14:04.7774 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:14:04.7967 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:14:06.0638 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:14:06.0719 Info LogFactory has been closed.
+2023-09-28 14:14:56.5423 Info Message Template Auto Format enabled
+2023-09-28 14:14:56.5813 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:14:56.6013 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:14:57.6620 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:14:57.6697 Info LogFactory has been closed.
+2023-09-28 14:15:03.6246 Info Message Template Auto Format enabled
+2023-09-28 14:15:03.6647 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:15:03.6807 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:15:04.7379 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:15:04.7482 Info LogFactory has been closed.
+2023-09-28 14:17:09.4800 Info Message Template Auto Format enabled
+2023-09-28 14:17:09.5203 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:17:09.5386 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:17:10.8221 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:17:10.8221 Info LogFactory has been closed.
+2023-09-28 14:17:58.1260 Info Message Template Auto Format enabled
+2023-09-28 14:17:58.1757 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:17:58.1930 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:17:59.3410 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:17:59.3521 Info LogFactory has been closed.
+2023-09-28 14:18:07.8868 Info Message Template Auto Format enabled
+2023-09-28 14:18:07.9250 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:18:07.9433 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:18:09.0103 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:18:09.0103 Info LogFactory has been closed.
+2023-09-28 14:20:07.9708 Info Message Template Auto Format enabled
+2023-09-28 14:20:08.0109 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:20:08.0306 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:20:09.2246 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:20:09.2347 Info LogFactory has been closed.
+2023-09-28 14:20:18.0804 Info Message Template Auto Format enabled
+2023-09-28 14:20:18.1219 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:20:18.1375 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:20:19.1384 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:20:19.1384 Info LogFactory has been closed.
+2023-09-28 14:20:27.7546 Info Message Template Auto Format enabled
+2023-09-28 14:20:27.7992 Info Adding target FileTarget(Name=logfile)
+2023-09-28 14:20:27.8174 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-09-28 14:20:28.9399 Info AppDomain Shutting down. LogFactory closing...
+2023-09-28 14:20:28.9480 Info LogFactory has been closed.

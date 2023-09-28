@@ -30,6 +30,9 @@ namespace WepApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -39,24 +42,29 @@ namespace WepApi.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Books");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
+                            CategoryId = 1,
                             Price = 25m,
                             Title = "Suç ve Ceza"
                         },
                         new
                         {
                             Id = 2,
+                            CategoryId = 2,
                             Price = 35m,
                             Title = "II. Dünya Savaşı"
                         },
                         new
                         {
                             Id = 3,
+                            CategoryId = 3,
                             Price = 45m,
                             Title = "Sarıkamış"
                         });
@@ -202,22 +210,22 @@ namespace WepApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "82bf2d95-94e7-4bd7-9e04-a3101f08ed20",
-                            ConcurrencyStamp = "0ac79ee8-03d5-4d51-a080-315699950b12",
+                            Id = "dd7be7f3-92f3-46aa-8cb3-feb392463aef",
+                            ConcurrencyStamp = "38fbac45-c4f5-4db8-8cf0-e70e0c33dfe3",
                             Name = "user",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "c457c6a1-b77f-4477-8f35-696c010e1b87",
-                            ConcurrencyStamp = "0f860ae6-6622-4eb9-a1e0-ef8f9b6282ca",
+                            Id = "0fb8a714-a809-448f-a64a-2490c4b6cf7a",
+                            ConcurrencyStamp = "e85e93b4-e8cd-4a87-b193-b909db0fe579",
                             Name = "editor",
                             NormalizedName = "EDITOR"
                         },
                         new
                         {
-                            Id = "5529f58c-8a8f-4fa1-a3b4-31fb2b8b5b25",
-                            ConcurrencyStamp = "f0c0ca56-fe0a-4a42-b1eb-e44356aa23b8",
+                            Id = "3d6f46b3-5b87-45db-835b-811cc834a52e",
+                            ConcurrencyStamp = "ad8a5c22-069d-44e0-9ca1-581c5dc41d52",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -329,6 +337,17 @@ namespace WepApi.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Entities.Models.Book", b =>
+                {
+                    b.HasOne("Entities.Models.Category", "Category")
+                        .WithMany("Books")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -378,6 +397,11 @@ namespace WepApi.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Entities.Models.Category", b =>
+                {
+                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }
