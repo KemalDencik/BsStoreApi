@@ -30,7 +30,7 @@ namespace Presentation.Controllers
         {
             _manager = manager;
         }
-        [Authorize(Roles = "user")]
+        //[Authorize(Roles = "admin")]
         [HttpHead]
         [ServiceFilter(typeof(ValidateMediaTypeAttribute))]
         [HttpGet(Name ="GetAllBooksAsync")]
@@ -55,7 +55,7 @@ namespace Presentation.Controllers
                 Ok(result.linkResponse.ShapedEntities); //link üretildiyse linkle yoksa shaped entities dön 
         }
 
-        [Authorize(Roles = "editor")]
+        //[Authorize(Roles = "editor")]
         [HttpGet("{id=int}")]
         public async Task<IActionResult> GetOneBookAsync([FromRoute(Name = "id")] int id)
         {
@@ -66,7 +66,16 @@ namespace Presentation.Controllers
             return Ok(book);
         }
 
-        [Authorize(Roles = "admin")]
+        //[Authorize]
+        [HttpGet("details")]
+        public async Task<IActionResult> GetAllBooksWithDetailsAsync()
+        {
+            return Ok(await _manager
+                .BookService
+                .GetAllBooksWithDetailsAsync(false));
+        }
+
+        //[Authorize(Roles = "admin")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPost(Name = "CreateOneBooksAsync")]
         public async Task<IActionResult> CreateOneBooksAsync([FromBody] BookDtoForInsertion bookDto)
@@ -124,5 +133,7 @@ namespace Presentation.Controllers
             //HANGİ METHODLAR KULLANILABİLİR ONLARI SÖYLEDİK
             return Ok();//200 
         }
+
+
     }
 }
