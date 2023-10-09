@@ -14,15 +14,18 @@ namespace Repositories.EFCore
         //eager loading yerine lazy yi seçme sebebi gereksiz kaynak kullanımından kaçınma
         private readonly IBookRepository _bookRepository;
         private readonly ICategoryRepository _categoryRepository;
+        private readonly IUploadFilesRepository _uploadFilesRepository;
 
         public RepositoryManager(
             RepositoryContext context,
             IBookRepository bookRepository,
-            ICategoryRepository categoryRepository)
+            ICategoryRepository categoryRepository,
+            IUploadFilesRepository uploadFilesRepository)
         {
             _context = context;
             _bookRepository = bookRepository;
             _categoryRepository = categoryRepository;
+            _uploadFilesRepository = uploadFilesRepository;
         }
 
         //context e erişim 
@@ -34,6 +37,7 @@ namespace Repositories.EFCore
         //bu alan tanımlanmasaydı bir üst sınıftan categoryrepoya erişemezdin çnükü ilk başta private tanımladım 
         public IBookRepository Book => _bookRepository;
         public ICategoryRepository Category => _categoryRepository;
+        public IUploadFilesRepository UploadFiles => _uploadFilesRepository;
 
         public async Task SaveAsync()
         {

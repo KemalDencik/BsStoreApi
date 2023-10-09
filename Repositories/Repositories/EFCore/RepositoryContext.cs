@@ -14,6 +14,7 @@ namespace Repositories.EFCore
         }
         public DbSet<Book> Books { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<UploadedFile> UploadedFiles { get; set; }
        
 
         //Tip Konfigürasyonunu Veritabanına Yansıtır

@@ -19,12 +19,14 @@ namespace Services
         private readonly IBookService _bookService;
         private readonly ICategoryService _categoryService;
         private readonly IAuthenticationService _authenticationService;
+        private readonly IUploadFilesService _uploadFilesService;
 
-        public ServiceManager(IBookService bookService, ICategoryService categoryService, IAuthenticationService authenticationService)
+        public ServiceManager(IBookService bookService, ICategoryService categoryService, IAuthenticationService authenticationService, IUploadFilesService uploadFilesService)
         {
             _bookService = bookService;
             _categoryService = categoryService;
             _authenticationService = authenticationService;
+            _uploadFilesService = uploadFilesService;
         }
 
         public IBookService BookService => _bookService;
@@ -33,5 +35,7 @@ namespace Services
 
         //ne zaman biri bizden bu nesneyi isterse value dönecez public kısım burası 
         public ICategoryService CategoryService => _categoryService;
+
+        public IUploadFilesService UploadFilesService => _uploadFilesService;
     }
 }

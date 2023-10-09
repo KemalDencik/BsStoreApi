@@ -247,12 +247,14 @@ namespace WepApi.Extensions
             // newlemelerim
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IUploadFilesRepository, UploadFilesRepository>();
         }
         public static void RegisterServices(this IServiceCollection services)
         {
             services.AddScoped<IBookService, BookManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<IAuthenticationService,AuthenticationManager>();
+            services.AddScoped<IUploadFilesService, UploadFilesManager>();
         }
     }
 }

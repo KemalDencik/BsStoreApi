@@ -9,9 +9,10 @@ namespace Repositories.Contracts
     //birden çok repo muz olabilir bu repolara manager üzerinden hepsine erişim verecez
     public interface IRepositoryManager
     {
-        IBookRepository Book { get; }
         //kayıt işlemi
+        IBookRepository Book { get; }
         ICategoryRepository Category { get; }
+        IUploadFilesRepository UploadFiles { get; }
         Task SaveAsync();
 
     }
