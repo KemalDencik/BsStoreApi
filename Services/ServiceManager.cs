@@ -28,10 +28,11 @@ namespace Services
         {
             //MANAGER İFADESİ İMPLEMANTASİONONUNYANİ DETAYLARIN OLDUĞU BİR NESNE BU NESNE İÇİNDE MAPPER KULLANDIĞIMIZ İÇİN
             //BİR ENJEKSİYON YAPTIK BU SEBEPLE GELİP BURDA MAPPER VERMEK ZORUNDAYIZ
-            _bookService = new Lazy<IBookService>(() => 
-            new BookManager(repositoryManager, logger, mapper,bookLinks));
+            _categoryService = new Lazy<ICategoryService>(() => 
+            new CategoryManager(repositoryManager));
 
-            _categoryService=new Lazy<ICategoryService>(()=>new CategoryManager(repositoryManager));
+            _bookService = new Lazy<IBookService>(() => 
+            new BookManager(repositoryManager, logger, mapper,bookLinks,_categoryService.Value));
 
             _authenticationService = new Lazy<IAuthenticationService>(() =>
             new AuthenticationManager(logger,mapper,userManager,configuration));

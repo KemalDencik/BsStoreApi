@@ -20,28 +20,35 @@ namespace Services
     {
         //herşey manager üzerinde dönecek
         //newlemeleri IRepositoryManager da yapıyoruz o sebeple bunu kullanıyoruz
+        private readonly ICategoryService _categoryService;
         private readonly IRepositoryManager _manager;
         private readonly ILoggerService _logger;
         private readonly IMapper _mapper;
         private readonly IBookLinks _bookLinks;
         //bu kodla çözümlüyorum DI 
-        public BookManager(IRepositoryManager manager, ILoggerService logger, IMapper mapper,IBookLinks bookLinks)
+        public BookManager(
+            IRepositoryManager manager,
+            ILoggerService logger,
+            IMapper mapper,
+            IBookLinks bookLinks,
+            ICategoryService categoryService)
         {
             _manager = manager;
             _logger = logger;
             _mapper = mapper;
             _bookLinks = bookLinks;
+            _categoryService = categoryService;
         }
 
         public async Task<BookDto> CreateOneBookAsync(BookDtoForInsertion bookDto)
         {
-            //argüman yok hatası
-            //if(book is null)
-            //    throw new ArgumentNullException(nameof(book));
-            var entitiy =  _mapper.Map<Book>(bookDto);
-            _manager.Book.CreateOneBook(entitiy);
+            var category = await _categoryService.GetOneCategoryByIdAsnyc(bookDto.CategoryId, false);
+
+            var entity =  _mapper.Map<Book>(bookDto);
+
+            _manager.Book.CreateOneBook(entity);
             await _manager.SaveAsync();
-            return _mapper.Map<BookDto>(entitiy);    
+            return _mapper.Map<BookDto>(entity);    
         }
 
         public async Task DeleteOneBookAsync(int id, bool trackChanges)
@@ -110,10 +117,15 @@ namespace Services
             BookDtoForUpdate bookDto,
             bool trackChanges)
         {
-           var entity = await GetOneBookByIdCheckExistsAsync(id,trackChanges);
+            var category = await _manager.Book.GetOneBookByIdAsync(bookDto.CategoryId, false);
+            var entity = await GetOneBookByIdCheckExistsAsync(id, trackChanges);
 
+            if (category is null)
+                throw new CategoryNotFoundException(bookDto.CategoryId);
+
+            entity.CategoryId = bookDto.CategoryId;
             //mapping işlemi var burda
-            
+
             entity = _mapper.Map<Book>(bookDto);
             _manager.Book.Update(entity);
             await _manager.SaveAsync();

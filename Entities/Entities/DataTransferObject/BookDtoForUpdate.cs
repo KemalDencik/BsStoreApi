@@ -15,5 +15,7 @@ namespace Entities.DataTransferObject
     {
         [Required]
         public int Id { get; set; }
+
+        public int CategoryId { get; set; }
     }
 }
