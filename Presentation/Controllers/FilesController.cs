@@ -15,6 +15,7 @@ namespace Presentation.Controllers
     {
         private readonly RepositoryContext _context; // RepositoryContext'ini bağımlılık enjeksiyonuyla ekledik
         private readonly IServiceManager _services;
+        
         public FilesController(RepositoryContext context, IServiceManager services)
         {
             _context = context;
@@ -43,10 +44,10 @@ namespace Presentation.Controllers
             var path = Path.Combine(folder, fileName);
 
             // Dosyayı diske kaydet
-            using (var stream = new FileStream(path, FileMode.Create))
-            {
-                await file.CopyToAsync(stream);
-            }
+            //using (var stream = new FileStream(path, FileMode.Create))
+            //{
+            //    await file.CopyToAsync(stream);
+            //}
 
             // Veritabanına kaydet
             var fileUrl = GenerateFileUrl(fileName); // Dosyanın URL'sini oluştur
@@ -88,6 +89,16 @@ namespace Presentation.Controllers
             return Ok(await _services
                 .UploadFilesService
                 .GetOneFilesByIdAsync(id, false));
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteOneUploadFiles([FromRoute(Name = "id")] int id)
+        {
+
+            await _services.UploadFilesService.DeleteOneUploadFiles(id, false);
+
+            return NoContent();
+
         }
     }
 }

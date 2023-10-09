@@ -35,5 +35,23 @@ namespace Services
                 throw new UploadFileException(id);
             return uploadFiles;
         }
+
+        public async Task DeleteOneUploadFiles(int id, bool trackChanges)
+        {
+            var file = await GetOneFileByIdCheckExistsAsync(id, trackChanges);
+
+            _manager.UploadFiles.DeleteOneFiles(file);
+            await _manager.SaveAsync();
+        }
+
+        private async Task<UploadedFile> GetOneFileByIdCheckExistsAsync(int id, bool trackChanges)
+        {
+            //check entity?
+            var file = await _manager.UploadFiles.GetOneFilesByIdAsync(id, trackChanges);
+
+            if (file is null)
+                throw new UploadFileException(id);
+            return file;
+        }
     }
 }

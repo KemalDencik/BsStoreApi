@@ -11,5 +11,6 @@ namespace Services.Contracts
     {
         Task<IEnumerable<UploadedFile>> GetAllFilesAsync(bool trackChanges);
         Task<UploadedFile> GetOneFilesByIdAsync(int id, bool trackChanges);
+        Task DeleteOneUploadFiles(int id, bool trackChanges);
     }
 }
