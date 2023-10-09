@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using NLog;
 using Services;
 using Services.Contracts;
+using System.Text.Json;
 using WebApi.Extensions;
 using WepApi.Extensions;
 
@@ -27,11 +28,11 @@ builder.Services.AddControllers(config =>
 //CSV FORMATI 
 .AddCustomCsvFormatter()
 .AddApplicationPart(typeof(Presentation.AssemblyReference).Assembly)
-.AddNewtonsoftJson(opt =>
-    opt.SerializerSettings.ReferenceLoopHandling =
-    Newtonsoft.Json.ReferenceLoopHandling.Ignore
-);
-
+.AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+});
 
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
@@ -62,8 +63,10 @@ builder.Services.AddMemoryCache();
 builder.Services.ConfigureRateLimitingOptions();
 builder.Services.AddHttpContextAccessor();
 builder.Services.ConfigureIdentity();
-builder.Services.ConfigureJwt(builder.Configuration); 
-
+builder.Services.ConfigureJwt(builder.Configuration);
+//newleme
+builder.Services.RegisterRepositories();
+builder.Services.RegisterServices();
 
 var app = builder.Build();
 
@@ -89,7 +92,6 @@ if (app.Environment.IsProduction())
 
 app.UseHttpsRedirection();
 //her hangi bir istemci herhangi bir headersla vs istek atabilir
-
 //rate limit
 
 app.UseIpRateLimiting();

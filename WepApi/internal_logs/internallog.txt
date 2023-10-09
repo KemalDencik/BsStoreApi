@@ -635,3 +635,18 @@
 2023-10-09 13:54:03.4889 Info Message Template Auto Format enabled
 2023-10-09 13:54:03.6608 Info Adding target FileTarget(Name=logfile)
 2023-10-09 13:54:03.6946 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-10-09 14:09:36.2398 Info Message Template Auto Format enabled
+2023-10-09 14:09:36.3359 Info Adding target FileTarget(Name=logfile)
+2023-10-09 14:09:36.3694 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-10-09 14:16:09.8545 Info Message Template Auto Format enabled
+2023-10-09 14:16:09.9533 Info Adding target FileTarget(Name=logfile)
+2023-10-09 14:16:09.9779 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-10-09 14:22:52.0804 Info Message Template Auto Format enabled
+2023-10-09 14:22:52.1877 Info Adding target FileTarget(Name=logfile)
+2023-10-09 14:22:52.2220 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-10-09 14:31:00.5014 Info Message Template Auto Format enabled
+2023-10-09 14:31:00.6189 Info Adding target FileTarget(Name=logfile)
+2023-10-09 14:31:00.6500 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
+2023-10-09 16:17:18.0400 Info Message Template Auto Format enabled
+2023-10-09 16:17:18.1323 Info Adding target FileTarget(Name=logfile)
+2023-10-09 16:17:18.1638 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\kemal\bsStoreApp\WepApi\nlog.config
